@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+
+    <!-- Bootstarp -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style/css/style.css">
+    <link rel="icon" type="image/png" sizes="100x100" href="favicon.png">
+
+    <title>Youtube To Mp3</title>
+    
+    <style>img[src*="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"] {
+        display: none !important;
+    }</style>
+</head>
+
+<body>
+
+    <h1 class="w-100 p-4 text-center fw-bold m-0" style="color: white; background-color: var(--red);">
+        Youtube Convertor
+    </h1>
+
+    <div class="w-100" style="overflow: hidden !important;">
+        <svg class="" id="visual" viewBox="0 0 1500 150" width="1500" height="150" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+            <path
+                d="M0 82L35.7 81C71.3 80 142.7 78 214.2 82.5C285.7 87 357.3 98 428.8 104.8C500.3 111.7 571.7 114.3 643 112.2C714.3 110 785.7 103 857 97.8C928.3 92.7 999.7 89.3 1071.2 87.2C1142.7 85 1214.3 84 1285.8 88.3C1357.3 92.7 1428.7 102.3 1464.3 107.2L1500 112L1500 0L1464.3 0C1428.7 0 1357.3 0 1285.8 0C1214.3 0 1142.7 0 1071.2 0C999.7 0 928.3 0 857 0C785.7 0 714.3 0 643 0C571.7 0 500.3 0 428.8 0C357.3 0 285.7 0 214.2 0C142.7 0 71.3 0 35.7 0L0 0Z"
+                fill="#fd9d97"></path>
+            <path
+                d="M0 96L35.7 91C71.3 86 142.7 76 214.2 74.2C285.7 72.3 357.3 78.7 428.8 79C500.3 79.3 571.7 73.7 643 73.5C714.3 73.3 785.7 78.7 857 81.3C928.3 84 999.7 84 1071.2 80.8C1142.7 77.7 1214.3 71.3 1285.8 73.5C1357.3 75.7 1428.7 86.3 1464.3 91.7L1500 97L1500 0L1464.3 0C1428.7 0 1357.3 0 1285.8 0C1214.3 0 1142.7 0 1071.2 0C999.7 0 928.3 0 857 0C785.7 0 714.3 0 643 0C571.7 0 500.3 0 428.8 0C357.3 0 285.7 0 214.2 0C142.7 0 71.3 0 35.7 0L0 0Z"
+                fill="#fd8880"></path>
+            <path
+                d="M0 56L35.7 55.7C71.3 55.3 142.7 54.7 214.2 57C285.7 59.3 357.3 64.7 428.8 64.5C500.3 64.3 571.7 58.7 643 55.5C714.3 52.3 785.7 51.7 857 51.7C928.3 51.7 999.7 52.3 1071.2 53.5C1142.7 54.7 1214.3 56.3 1285.8 57.3C1357.3 58.3 1428.7 58.7 1464.3 58.8L1500 59L1500 0L1464.3 0C1428.7 0 1357.3 0 1285.8 0C1214.3 0 1142.7 0 1071.2 0C999.7 0 928.3 0 857 0C785.7 0 714.3 0 643 0C571.7 0 500.3 0 428.8 0C357.3 0 285.7 0 214.2 0C142.7 0 71.3 0 35.7 0L0 0Z"
+                fill="#fc7368"></path>
+            <path
+                d="M0 37L35.7 38.2C71.3 39.3 142.7 41.7 214.2 42.5C285.7 43.3 357.3 42.7 428.8 43.3C500.3 44 571.7 46 643 45.3C714.3 44.7 785.7 41.3 857 38C928.3 34.7 999.7 31.3 1071.2 33.8C1142.7 36.3 1214.3 44.7 1285.8 48.7C1357.3 52.7 1428.7 52.3 1464.3 52.2L1500 52L1500 0L1464.3 0C1428.7 0 1357.3 0 1285.8 0C1214.3 0 1142.7 0 1071.2 0C999.7 0 928.3 0 857 0C785.7 0 714.3 0 643 0C571.7 0 500.3 0 428.8 0C357.3 0 285.7 0 214.2 0C142.7 0 71.3 0 35.7 0L0 0Z"
+                fill="#f95c4f"></path>
+            <path
+                d="M0 16L35.7 18.2C71.3 20.3 142.7 24.7 214.2 26.3C285.7 28 357.3 27 428.8 24.2C500.3 21.3 571.7 16.7 643 15.2C714.3 13.7 785.7 15.3 857 18.3C928.3 21.3 999.7 25.7 1071.2 28.3C1142.7 31 1214.3 32 1285.8 29C1357.3 26 1428.7 19 1464.3 15.5L1500 12L1500 0L1464.3 0C1428.7 0 1357.3 0 1285.8 0C1214.3 0 1142.7 0 1071.2 0C999.7 0 928.3 0 857 0C785.7 0 714.3 0 643 0C571.7 0 500.3 0 428.8 0C357.3 0 285.7 0 214.2 0C142.7 0 71.3 0 35.7 0L0 0Z"
+                fill="#f44336"></path>
+        </svg>
+
+    </div>
+
+    <div class="container-sm my-5">
+        <form onsubmit="return false" class="form d-flex justify-content-center gap-3">
+            <input type="text" class="inputBox p-3 w-75 border border-2 rounded-3"
+                placeholder="Paste video url here or search by query" required>
+            <button type="submit" class="searchBtn btn d-flex align-items-center gap-2">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                Search
+            </button>
+        </form>
+    </div>
+
+
+    <div class="results-box container-xl d-flex flex-column gap-4 align-items-center">
+
+        <!-- 
+         <div class="result w-75 border border-2 rounded-3 p-3 d-flex gap-4">
+
+            <div class="thumbnail rounded-3">
+                <img class="w-100 h-100 rounded-3" src="style/images/thumbnail.webp" alt="">
+            </div>
+
+            <div class="py-3">
+
+                <h5>
+                    Noizy x Stresi - Medalioni (Official Video)
+                </h5>
+
+                <p>
+                    "Noizy x Stresi - Medalioni (Official Video) ▸ Follow Noizy Instagram :
+                    https://www.instagram.com/noizy ▸ Follow Stresi Instagram ..."
+                </p>
+                <div class="d-flex w-100 justify-content-between">
+                    <div class=" d-flex gap-2 align-items-center">
+                        <img class="chanleThumbanil h-100 rounded-circle" src="style/images/chanel.jpg" alt="">
+                        <p class="m-0">thisisnoizy</p>
+                    </div>
+                    <a href="" id="" onclick="download(this.id)" class="btn downloadBtn d-flex align-items-center gap-3">
+                        <i class="fa-solid fa-circle-arrow-down"></i>
+                        Download</a>
+                </div>
+
+
+            </div>
+
+        </div>  -->
+
+    </div>
+
+
+
+    <p class="w-100 p-3 text-center m-0" style="color: var(--red);">
+        Made with ♡ by Rigels
+    </p>
+
+
+
+
+    <!-- jQuery JS -->
+    <script src="lib/jquey/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+        crossorigin="anonymous"></script>
+
+    <!-- Sweet Alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Custom JS -->
+    <script src='config.js'></script>
+    <script src="js/script.js"></script>
+
+
+</body>
+
+</html>

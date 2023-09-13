@@ -1,0 +1,153 @@
+* {
+    font-family: 'Rubik', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+/********************/
+/*  Selecting Text  */
+/********************/
+::selection {
+    color: var(--white);
+    background: var(--black);
+}
+
+
+
+/********************/
+/*   Main Colors    */
+/********************/
+:root {
+    --black: #333;
+    --white: #eee;
+    --red: #f44336;
+
+}
+
+
+
+/********************/
+/*      Body        */
+/********************/
+body {
+    background-color: var(--white);
+    width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden !important;
+    position: relative;
+}
+
+
+
+/********************/
+/*   Sweet Alert    */
+/********************/
+.swal2-popup {
+    background: var(--white) !important;
+    color: var(--black) !important;
+}
+
+.swal2-confirm {
+    background: var(--red) !important;
+    color: var(--white) !important;
+    outline: none !important;
+}
+
+
+
+/********************/
+/*    Search Box    */
+/********************/
+.inputBox {
+    background-color: #fdf9f9;
+    border-color: #8f8989 !important;
+}
+
+
+
+/********************/
+/*    Search Btn    */
+/********************/
+.searchBtn,.downloadBtn {
+    background-color: var(--red) !important;
+    color: var(--white) !important;
+}
+
+
+
+/********************/
+/*    Search Btn    */
+/********************/
+.result{
+    border-color: #8f8989 !important;
+}s
+.thumbnail{
+    width: 35rem !important;
+}
+.thumbnail img{
+    width: 25rem !important;
+}
+.chanleThumbanil{
+    width: 3rem;
+}
+.result div:nth-child(2){
+    overflow: auto;
+}
+
+.footer svg{
+    transform: rotateX(180deg);
+}
+
+
+@media screen and (max-width: 1200px) and( min-width:900px) {
+    .result{
+        width: 90% !important;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .result{
+        width: 70%;
+        flex-direction: column;
+    }
+    .thumbnail img{
+        width: 100% !important;
+    }
+    .result div:nth-child(2){
+        width: 100% !important;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    form{
+        flex-direction:column;
+        align-items: center;
+    }
+    .inputBox, .searchBtn{
+        width: 100% !important;
+    }
+    .searchBtn{
+        justify-content: center;
+        gap: 1rem !important;
+        padding: 1rem;
+    }
+}
+@media screen and (max-width: 720px) and (min-width:600) {
+    .result{
+        width: 85% !important;
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    .result{
+        width: 100% !important;
+    }
+}
