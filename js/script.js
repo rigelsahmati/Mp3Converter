@@ -156,7 +156,7 @@ async function downloadVid(videoId) {
       'error'
     )
   }
-} //Calls the download api,an music id is required wich is equal to the id of the button tha trigerd the function
+} //Calls the download api,an music id is required wich is equal to the id of the button that4 trigerd the function
 
 function handleDownload(btnId) {
   document.getElementById(`${btnId}download`).href = downloadResponse.link; //Sets the href of the link to the download url, from download api response
