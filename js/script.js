@@ -67,7 +67,7 @@ async function search() {
     const options = {
       method: 'GET',
       headers: {
-        'X-RapidAPI-Key': '9f779432a8mshac0e322875fea12p1e7f1bjsnf9453aa627a2',
+        'X-RapidAPI-Key': config.API_Key,
         'X-RapidAPI-Host': 'yt-api.p.rapidapi.com'
       }
     }; //Api options
@@ -139,8 +139,8 @@ async function downloadVid(videoId) {
   const options = {
     method: 'GET',
     headers: {
-      'X-RapidAPI-Key': config.X_RapidAPI_Key,
-      'X-RapidAPI-Host': config.X_RapidAPI_Host
+      'X-RapidAPI-Key': config.API_Key,
+      'X-RapidAPI-Host': 'youtube-mp36.p.rapidapi.com'
     }
   }; //Api options
 
