@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: all .3s;
 }
 
 html {
@@ -26,8 +27,11 @@ html {
 /********************/
 :root {
     --black: #333;
-    --white: #eee;
     --red: #f44336;
+    --white: #eee;
+    --textBlack: #333;
+    --resultWhite: #eee;
+    --buttons: #eee;
 
 }
 
@@ -56,8 +60,17 @@ body {
 
 .swal2-confirm {
     background: var(--red) !important;
-    color: var(--white) !important;
+    color: var(--buttons) !important;
     outline: none !important;
+}
+
+.swal2-title {
+    color: var(--textBlack) !important;
+    font-size: 20px;
+}
+
+.swal2-html-container {
+    color: var(--textBlack) !important;
 }
 
 
@@ -75,79 +88,160 @@ body {
 /********************/
 /*    Search Btn    */
 /********************/
-.searchBtn,.downloadBtn {
+.searchBtn,
+.downloadBtn,
+i.fa-solid.fa-circle-arrow-down {
     background-color: var(--red) !important;
-    color: var(--white) !important;
+    color: var(--buttons) !important;
+    transition: all .2s !important;
+}
+
+.searchBtn:hover {
+    box-shadow: 0px 0px 3px 2px var(--red);
 }
 
 
 
-/********************/
-/*    Search Btn    */
-/********************/
-.result{
+/***************************/
+/*    Result Container    */
+/*************************/
+.result {
     border-color: #8f8989 !important;
-}s
-.thumbnail{
+    background: var(--resultWhite) !important;
+}
+
+s .thumbnail {
     width: 35rem !important;
 }
-.thumbnail img{
+
+.thumbnail img {
     width: 25rem !important;
 }
-.chanleThumbanil{
+
+.chanleThumbanil {
     width: 3rem;
 }
-.result div:nth-child(2){
+
+.result div:nth-child(2) {
     overflow: auto;
 }
 
-.footer svg{
-    transform: rotateX(180deg);
+.toYoutubeParent {
+    /* background: black; */
+    transition: all .4s;
+    opacity: 0;
+    backdrop-filter: blur(10px);
+}
+
+.fa-youtube {
+    color: #f44336;
+}
+
+.toYoutubeBtn {
+    transition: all .3s;
+}
+
+.toYoutubeBtn:hover {
+    transform: translateY(-10px);
+}
+
+.thumbnail:hover>.toYoutubeParent {
+    opacity: 1;
+}
+
+.channelLink {
+    text-decoration: none;
+    color: var(--textBlack) !important;
+}
+
+.channelLink:hover {
+    text-decoration: underline;
+}
+
+.result>div:nth-child(2) * {
+    color: var(--textBlack);
+}
+
+.settingsButton {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    color: var(--buttons) !important;
+    background: var(--red) !important;
+    width: 3rem;
+    height: 3rem;
+    /* animation: settingsButton-animation; */
+}
+
+.settingsButton>i {
+    animation: rotate-center 5s linear infinite both;
+}
+
+@keyframes rotate-center {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 
-@media screen and (max-width: 1200px) and( min-width:900px) {
-    .result{
+
+
+
+
+
+
+@media screen and (max-width: 1200px) and(min-width:900px) {
+    .result {
         width: 90% !important;
     }
 }
 
 @media screen and (max-width: 1000px) {
-    .result{
+    .result {
         width: 70%;
         flex-direction: column;
     }
-    .thumbnail img{
+
+    .thumbnail img {
         width: 100% !important;
     }
-    .result div:nth-child(2){
+
+    .result div:nth-child(2) {
         width: 100% !important;
     }
 }
 
 @media screen and (max-width: 850px) {
-    form{
-        flex-direction:column;
+    form {
+        flex-direction: column;
         align-items: center;
     }
-    .inputBox, .searchBtn{
+
+    .inputBox,
+    .searchBtn {
         width: 100% !important;
     }
-    .searchBtn{
+
+    .searchBtn {
         justify-content: center;
         gap: 1rem !important;
         padding: 1rem;
     }
 }
+
 @media screen and (max-width: 720px) and (min-width:600) {
-    .result{
+    .result {
         width: 85% !important;
     }
 }
 
 
 @media screen and (max-width: 600px) {
-    .result{
+    .result {
         width: 100% !important;
     }
 }
