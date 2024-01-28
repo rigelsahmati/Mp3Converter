@@ -67,7 +67,7 @@ async function search() {
     const options = {
       method: 'GET',
       headers: {
-        'X-RapidAPI-Key': config.API_Key,
+        'X-RapidAPI-Key': Key.API_Key,
         'X-RapidAPI-Host': 'yt-api.p.rapidapi.com'
       }
     }; //Api options
@@ -139,7 +139,7 @@ async function downloadVid(videoId) {
   const options = {
     method: 'GET',
     headers: {
-      'X-RapidAPI-Key': config.API_Key,
+      'X-RapidAPI-Key': Key.API_Key,
       'X-RapidAPI-Host': 'youtube-mp36.p.rapidapi.com'
     }
   }; //Api options
