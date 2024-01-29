@@ -1,3 +1,7 @@
+var API_Key;
+import('/config.js').then(config => {
+  API_Key = config.Key.API_Key;
+});
 var inputBoxValue; //To save user input
 var dynamicThumbnail; //To Check if dynamicThumbnail, if (true) enable them  
 var result; //To store the api response after user searches
@@ -67,7 +71,7 @@ async function search() {
     const options = {
       method: 'GET',
       headers: {
-        'X-RapidAPI-Key': Key.API_Key,
+        'X-RapidAPI-Key': API_Key,
         'X-RapidAPI-Host': 'yt-api.p.rapidapi.com'
       }
     }; //Api options
@@ -139,7 +143,7 @@ async function downloadVid(videoId) {
   const options = {
     method: 'GET',
     headers: {
-      'X-RapidAPI-Key': Key.API_Key,
+      'X-RapidAPI-Key': API_Key,
       'X-RapidAPI-Host': 'youtube-mp36.p.rapidapi.com'
     }
   }; //Api options
