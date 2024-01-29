@@ -1,5 +1,5 @@
 var API_Key;
-import('/config.js').then(config => {
+import('../config.js').then(config => {
   API_Key = config.Key.API_Key;
 });
 var inputBoxValue; //To save user input
