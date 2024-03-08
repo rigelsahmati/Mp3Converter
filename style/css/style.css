@@ -105,6 +105,22 @@ i.fa-solid.fa-circle-arrow-down {
 /***************************/
 /*    Result Container    */
 /*************************/
+.modal__container{
+    background-color: var(--white) !important;
+}
+.modal__container p,
+.modal__close {
+    color: var(--textBlack) !important;
+}
+.form-switch i::before {
+    background: var(--black) !important;
+}
+
+    
+
+/***************************/
+/*    Result Container    */
+/*************************/
 .result {
     border-color: #8f8989 !important;
     background: var(--resultWhite) !important;
