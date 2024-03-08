@@ -103,7 +103,7 @@ i.fa-solid.fa-circle-arrow-down {
 
 
 /***************************/
-/*    Result Container    */
+/*    Modal    */
 /*************************/
 .modal__container{
     background-color: var(--white) !important;
@@ -115,8 +115,14 @@ i.fa-solid.fa-circle-arrow-down {
 .form-switch i::before {
     background: var(--black) !important;
 }
+#ytPlayerModal > div >.modal__container{
+    min-width: 80% !important;
+}
+#ytplayer{
+    width: 100%;
+}
 
-    
+
 
 /***************************/
 /*    Result Container    */

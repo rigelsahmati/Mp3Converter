@@ -47,6 +47,11 @@ window.onload = (event) => {
     var thumbnailInput = document.getElementById('thumbnailChange'); //Stores the thumbnail switch input
     if (dynamicThumbnail == true) thumbnailInput.checked = true; //If dynamicThumbanil in localStorage is true,turn the input on
   }
+  //Load YouTube Api
+  var tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/iframe_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 };
 
 $('.form').on('submit', function (event) {
@@ -109,7 +114,7 @@ function DisplaysResult() {
       <div class="thumbnail rounded-3 position-relative">
           <img class="w-100 h-100 rounded-3" src="${videoThumbnail}" alt="">
           <div class="position-absolute w-100 h-100 bg-red top-0 rounded-3 toYoutubeParent d-flex ">
-          <a href="https://www.youtube.com/watch?v=${r.videoId}" class="btn m-auto text-white border toYoutubeBtn" target="_blank"><i class="fa-brands fa-youtube me-2"></i> Open On YouTube</a>
+          <a onclick="openYtPlayer('${r.videoId}')" class="btn m-auto text-white border toYoutubeBtn" target="_blank"><i class="fa-brands fa-youtube me-2"></i> Open On YouTube</a>
       </div>
       </div>
 
@@ -137,6 +142,23 @@ function DisplaysResult() {
   })
 
 } //Display search results to user
+
+var player;
+function openYtPlayer(videId) {
+  if(player != null) player.destroy()
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player('ytplayer', {
+      videoId: videId,
+      playerVars: {
+        'playsinline': 1
+      },
+      events: {
+        'onReady': MicroModal.show('ytPlayerModal'),
+      }
+    });
+  }
+  onYouTubeIframeAPIReady()
+} //Loads YouTube Embed
 
 async function downloadVid(videoId) {
   const url = `https://youtube-mp36.p.rapidapi.com/dl?id=${videoId}`; //Download api url with video
