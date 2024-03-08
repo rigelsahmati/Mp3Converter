@@ -149,7 +149,7 @@ function DisplaysResult() {
 var player;
 function openYtPlayer(videId) {
   if(player != null) {
-    if(player.getVideoData().video_id == videId) return;
+    if(player.getVideoData().video_id == videId) MicroModal.show('ytPlayerModal');
     else player.destroy()
   }
   function onYouTubeIframeAPIReady() {
