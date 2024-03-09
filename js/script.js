@@ -52,9 +52,9 @@ window.onload = (event) => {
   tag.src = "https://www.youtube.com/iframe_api";
   var firstScriptTag = document.getElementsByTagName('script')[0];
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-  document.querySelectorAll('.modal__close')[1].addEventListener('click',function(){
-    player.pauseVideo()
-  })
+  document.getElementById('ytPlayerModal').addEventListener('hidden.bs.modal', event => {
+    player !== null ? player.pauseVideo() : null;
+})
 };
 
 $('.form').on('submit', function (event) {
@@ -116,9 +116,7 @@ function DisplaysResult() {
     <div class="result w-75 border border-2 rounded-3 p-3 d-flex gap-4">
       <div class="thumbnail rounded-3 position-relative">
           <img class="w-100 h-100 rounded-3" src="${videoThumbnail}" alt="">
-          <div class="position-absolute w-100 h-100 bg-red top-0 rounded-3 toYoutubeParent d-flex ">
-          <a onclick="openYtPlayer('${r.videoId}')" class="btn m-auto text-white border toYoutubeBtn" target="_blank"><i class="fa-brands fa-youtube me-2"></i> Open On YouTube</a>
-      </div>
+          <a onclick="openYtPlayer('${r.videoId}')" data-bs-toggle="modal" data-bs-target="#ytPlayerModal" class="btn m-2 text-white border toYoutubeBtn d-flex justify-content-center align-items-center" ><i class="fa-solid fa-play"></i></a>
       </div>
 
       <div class="py-3 w-50 d-flex flex-column justify-content-between">
@@ -147,9 +145,10 @@ function DisplaysResult() {
 } //Display search results to user
 
 var player;
+var currentPlayingId;
 function openYtPlayer(videId) {
   if(player != null) {
-    if(player.getVideoData().video_id == videId) MicroModal.show('ytPlayerModal');
+    if(currentPlayingId == videId) return;
     else player.destroy()
   }
   function onYouTubeIframeAPIReady() {
@@ -163,6 +162,7 @@ function openYtPlayer(videId) {
       }
     });
   }
+  currentPlayingId = videId;
   onYouTubeIframeAPIReady()
 } //Loads YouTube Embed
 
