@@ -105,7 +105,8 @@ i.fa-solid.fa-circle-arrow-down {
 /***************************/
 /*    Modal    */
 /*************************/
-.modal__container{
+.modal__container,
+.bs-modal-content{
     background-color: var(--white) !important;
 }
 .modal__container p,
@@ -115,11 +116,9 @@ i.fa-solid.fa-circle-arrow-down {
 .form-switch i::before {
     background: var(--black) !important;
 }
-#ytPlayerModal > div >.modal__container{
-    min-width: 80% !important;
-}
 #ytplayer{
     width: 100%;
+    border-radius: 15px;
 }
 
 
@@ -148,12 +147,6 @@ s .thumbnail {
     overflow: auto;
 }
 
-.toYoutubeParent {
-    /* background: black; */
-    transition: all .4s;
-    opacity: 0;
-    backdrop-filter: blur(10px);
-}
 
 .fa-youtube {
     color: #f44336;
@@ -161,10 +154,14 @@ s .thumbnail {
 
 .toYoutubeBtn {
     transition: all .3s;
-}
-
-.toYoutubeBtn:hover {
-    transform: translateY(-10px);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    backdrop-filter: blur(10px);
 }
 
 .thumbnail:hover>.toYoutubeParent {
